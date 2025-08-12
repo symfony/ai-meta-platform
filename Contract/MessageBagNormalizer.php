@@ -27,16 +27,6 @@ final class MessageBagNormalizer extends ModelContractNormalizer
     ) {
     }
 
-    protected function supportedDataClass(): string
-    {
-        return MessageBagInterface::class;
-    }
-
-    protected function supportsModel(Model $model): bool
-    {
-        return $model instanceof Llama;
-    }
-
     /**
      * @param MessageBagInterface $data
      *
@@ -47,5 +37,15 @@ final class MessageBagNormalizer extends ModelContractNormalizer
         return [
             'prompt' => $this->promptConverter->convertToPrompt($data),
         ];
+    }
+
+    protected function supportedDataClass(): string
+    {
+        return MessageBagInterface::class;
+    }
+
+    protected function supportsModel(Model $model): bool
+    {
+        return $model instanceof Llama;
     }
 }
