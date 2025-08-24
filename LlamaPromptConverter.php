@@ -15,7 +15,7 @@ use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Message\AssistantMessage;
 use Symfony\AI\Platform\Message\Content\ImageUrl;
 use Symfony\AI\Platform\Message\Content\Text;
-use Symfony\AI\Platform\Message\MessageBagInterface;
+use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Message\SystemMessage;
 use Symfony\AI\Platform\Message\UserMessage;
 
@@ -24,7 +24,7 @@ use Symfony\AI\Platform\Message\UserMessage;
  */
 final class LlamaPromptConverter
 {
-    public function convertToPrompt(MessageBagInterface $messageBag): string
+    public function convertToPrompt(MessageBag $messageBag): string
     {
         $messages = [];
 
